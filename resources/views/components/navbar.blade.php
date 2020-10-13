@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Acerca de</a>
+        {{--<a class="nav-link" href="#">Acerca de</a> --}}
       </li>
     </ul>
   </div>

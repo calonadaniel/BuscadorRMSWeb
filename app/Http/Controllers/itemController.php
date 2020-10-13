@@ -59,8 +59,10 @@ class itemController extends Controller
           })
   
         ->where('itemdynamic.StoreID', '=',$store) 
+        ->where('item.inactive','=','0')
         ->Where(function ($search) use ($query) {
         $search->where('item.Itemlookupcode', 'like', '%'.$query.'%')
+        ->orWhere('department.name', 'like', '%'.$query.'%')
         ->orWhere('item.Description', 'like', '%'.$query.'%')
         ->orWhere('item.extendeddescription', 'like', '%'.$query.'%')
         ->orWhere('item.subdescription1', 'like', '%'.$query.'%')
@@ -68,8 +70,8 @@ class itemController extends Controller
         ->orWhere('item.subdescription3', 'like', '%'.$query.'%')
         ->orWhere('alias.alias', 'like', '%'.$query.'%');
         })
-        
           ->orderBy('item.Description')    
+          ->distinct()
           ->get();
 
           return $itemlist;   
@@ -92,10 +94,11 @@ class itemController extends Controller
               $join->on('item.itemlookupcode','=','dpr.ItemLookupCode') 
                   ->where("dpr.StoreID",'=',$store);  
             })
-    
+          ->where('item.inactive','=','0')
           ->where('itemdynamic.StoreID', '=',$store) 
-    
           ->orderBy('Description')
+          ->distinct()
+
           ->paginate(100);
 
           return $itemlist;
@@ -147,7 +150,7 @@ class itemController extends Controller
       ->where('store.name', 'not like', '%Distribucion%')
       ->where('store.name', 'not like', '%DevolucionesPro%')
       ->orderby('store.name','asc')
-
+      //->distinct()
       ->get();
       //dd($itemlist);
       $item = $itemlist;

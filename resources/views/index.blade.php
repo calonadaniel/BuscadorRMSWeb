@@ -36,7 +36,7 @@
           <th scope="col">Precio PG</th>
           <th scope="col">Precio 3E</th>
           <th scope="col">Precio Promo</th>
-          <th scope="col">Inventario</th>
+          <th scope="col">Inv</th>
           <th scope="col">HQ</th>
           <th scope="col">Detalles</th>
         </tr>
@@ -51,28 +51,28 @@
           <td>{{$item->itemlookupcode}}</td>
           <td class="text-left">{{$item->description}}</td>
           <td>{{$item->department}}</td>
-          <td>L. {{round($item->price,2)}}</td>
-          <td>L. {{round($item->price*(1-$item->dpg/100),2)}}</td>
-          <td>L. {{round($item->price*(1-$item->d3e/100),2)}}</td>
+          <td class="text-left">L. {{number_format(round($item->price,2),2)}}</td>
+          <td class="text-left">L. {{number_format(round($item->price*(1-$item->dpg/100),2),2)}}</td>
+          <td class="text-left">L. {{number_format(round($item->price*(1-$item->d3e/100),2),2)}}</td>
 
           @if(is_null($item->dpr)) 
-            <td class="text-danger">No</td>
+            <td class="text-danger text-left">No</td>
           @else  
-            <td>L. {{round($item->price*(1-$item->dpr/100),2)}}</td>
+            <td class="text-left">L. {{number_format(round($item->price*(1-$item->dpr/100),2),2)}}</td>
           @endif
 
           @if($item->inventory < 1) 
-          <td class="text-danger">{{$item->inventory}}</td>
+          <td class="text-danger">{{floatval($item->inventory)}}</td>
           @else  
-            <td>{{$item->inventory}}</td>
+            <td>{{floatval($item->inventory)}}</td>
           @endif
 
           @if($item->hqQuantity < 1) 
-            <td class="text-danger">{{$item->hqQuantity}}</td>
+            <td class="text-danger">{{floatval($item->hqQuantity)}}</td>
           @else  
-            <td>{{$item->hqQuantity}}</td>
+            <td>{{floatval($item->inventory)}}</td>
           @endif
-          <td> <a class="btn btn-success btn-sm" 
+          <td> <a class="btn btn-success btn-sm text-white" 
                   href="item-{{$item->itemlookupcode}}" 
                   role="button">Ver</a>
           </td>
