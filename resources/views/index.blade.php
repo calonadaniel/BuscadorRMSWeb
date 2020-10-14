@@ -49,16 +49,16 @@
         <tr>
           <th scope="row">{{$num++}}</th>
           <td>{{$item->itemlookupcode}}</td>
-          <td class="text-left">{{$item->description}}</td>
+          <td class="text-right">{{$item->description}}</td>
           <td>{{$item->department}}</td>
-          <td class="text-left">L. {{number_format(round($item->price,2),2)}}</td>
-          <td class="text-left">L. {{number_format(round($item->price*(1-$item->dpg/100),2),2)}}</td>
-          <td class="text-left">L. {{number_format(round($item->price*(1-$item->d3e/100),2),2)}}</td>
+          <td class="text-right">L. {{number_format(round($item->price,2),2)}}</td>
+          <td class="text-right">L. {{number_format(round($item->price*(1-$item->dpg/100),2),2)}}</td>
+          <td class="text-right">L. {{number_format(round($item->price*(1-$item->d3e/100),2),2)}}</td>
 
           @if(is_null($item->dpr)) 
-            <td class="text-danger text-left">No</td>
+            <td class="text-danger text-right">No</td>
           @else  
-            <td class="text-left">L. {{number_format(round($item->price*(1-$item->dpr/100),2),2)}}</td>
+            <td class="text-right">L. {{number_format(round($item->price*(1-$item->dpr/100),2),2)}}</td>
           @endif
 
           @if($item->inventory < 1) 
@@ -70,7 +70,7 @@
           @if($item->hqQuantity < 1) 
             <td class="text-danger">{{floatval($item->hqQuantity)}}</td>
           @else  
-            <td>{{floatval($item->inventory)}}</td>
+            <td>{{floatval($item->hqQuantity)}}</td>
           @endif
           <td> <a class="btn btn-success btn-sm text-white" 
                   href="item-{{$item->itemlookupcode}}" 
