@@ -7,10 +7,11 @@
 {{--Script del main js --}}
 <script src="./js/app.js"></script> 
 
-{{--Parsley--}}
+<!-- Parsley
 <script src="./js/parsley.js"></script> 
+<script src="./js/parsley.js.map"></script> 
 
-<script src="./js/item.js"></script> 
+<script src="./js/item.js"></script> -->
 
 
 

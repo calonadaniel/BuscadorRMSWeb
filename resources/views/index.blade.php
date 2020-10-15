@@ -8,22 +8,22 @@
 <div class="section">
   <div class="container text-center">
 
-  <form class="example py-5"  action="{{route('search')}}" method="post" id='buscadorform'>
+    <form class="example py-5"  action="{{route('search')}}" method="post" id="buscadorform">
         {{ csrf_field() }}
         <div class="form-row">
-          <div class="form-group col-3">
-            <select class="form-control" name="store_selected" id="store_selected" data-parsley-required  required >
+          <div class="form-group col-lg-3 col-md-3 col-sm-12">
+            <select class="form-control" name="store_selected" id="store_selected" required onchange="this.form.submit()" >
               @foreach ($store as $store)
               <option value="{{$store->ID}}">{{$store->Name}}</option>   
               @endforeach
             </select>
           </div>
-          <div class="form-group col-9">
-            <input type="text" placeholder="Buscar" name="search" id="search" data-parsley-minlength="2" data-parsley-required required minlength="2" >
-            <button type="submit" class="btn btn-success">Buscar</button>
+          <div class="form-group col-lg-9 col-md-9 col-sm-12">
+            <input type="text" placeholder="Buscar..." name="search" id="search" required minlength="2" value="{{$query}}" >
+            <button type="submit" class="btn btn-success" >Buscar</button>
           </div>
         </div>  
-      </form>
+    </form>
 
     <table class="table table-hover table-sm table-responsive table-bordered">
       <thead class="bg-success text-white">
@@ -42,15 +42,15 @@
         </tr>
       </thead>
       <tbody>
-      @php
-            $num = 1;
-      @endphp
-      @foreach($item as $item) 
+        @php
+              $num = 1;
+        @endphp
+        @foreach($item as $item) 
         <tr>
           <th scope="row">{{$num++}}</th>
-          <td>{{$item->itemlookupcode}}</td>
-          <td class="text-right">{{$item->description}}</td>
-          <td>{{$item->department}}</td>
+          <td class="text-left">{{$item->itemlookupcode}}</td>
+          <td class="text-left">{{$item->description}}</td>
+          <td class="text-left">{{$item->department}}</td>
           <td class="text-right">L. {{number_format(round($item->price,2),2)}}</td>
           <td class="text-right">L. {{number_format(round($item->price*(1-$item->dpg/100),2),2)}}</td>
           <td class="text-right">L. {{number_format(round($item->price*(1-$item->d3e/100),2),2)}}</td>
@@ -62,15 +62,15 @@
           @endif
 
           @if($item->inventory < 1) 
-          <td class="text-danger">{{floatval($item->inventory)}}</td>
+          <td class="text-danger text-right">{{floatval($item->inventory)}}</td>
           @else  
-            <td>{{floatval($item->inventory)}}</td>
+            <td class="text-danger text-right">{{floatval($item->inventory)}}</td>
           @endif
 
           @if($item->hqQuantity < 1) 
-            <td class="text-danger">{{floatval($item->hqQuantity)}}</td>
+            <td class="text-danger text-right">{{floatval($item->hqQuantity)}}</td>
           @else  
-            <td>{{floatval($item->hqQuantity)}}</td>
+            <td class="text-danger text-right">{{floatval($item->hqQuantity)}}</td>
           @endif
           <td> <a class="btn btn-success btn-sm text-white" 
                   href="item-{{$item->itemlookupcode}}" 

@@ -12,3 +12,12 @@
             return true; 
         });
     }
+
+    //function validatebuscadorform() {
+    //    var x = document.forms["buscadorform"]["search"].value;
+    //    if (x == "") {
+    //      alert("Name must be filled out");
+    //      return false;
+    //    }
+    //  }  
+    //this.form.submit()

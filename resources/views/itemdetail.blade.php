@@ -110,7 +110,7 @@
           <td class="text-right">L. {{number_format(round($item->price*(1-$item->d3e/100),2),2)}}</td>
 
           @if(is_null($item->dpr)) 
-            <td class="text-danger text-center ">No</td>
+            <td class="text-danger text-right ">No</td>
           @else  
             <td class="text-right">L. {{number_format(round($item->price*(1-$item->dpr/100),2),2)}}</td>
           @endif

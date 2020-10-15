@@ -23,7 +23,7 @@ class itemController extends Controller
         $item = $this->itemlist($store,$query);
         $store = $this->storelist();
         
-        return view('index', compact('item', 'store'));
+        return view('index', compact('item', 'store', 'query'));
     } 
 
      public function search(Request $request) {
@@ -34,7 +34,7 @@ class itemController extends Controller
        $item = $this->itemlist($store, $query);
        $store = $this->storelist();
 
-       return view('index', compact('item', 'store'));
+       return view('index', compact('item', 'store', 'query'));
      }
 
 
