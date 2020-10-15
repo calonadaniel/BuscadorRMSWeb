@@ -18,23 +18,36 @@ class itemController extends Controller
     public function index(Request $request){
 
         $store = "32";  //Por defecto FC Aeropuerto
+        $selectedstore = $store;
+
         $query = "";    // Busqueda vacia en primera carga
-        
+
         $item = $this->itemlist($store,$query);
         $store = $this->storelist();
-        
-        return view('index', compact('item', 'store', 'query'));
+
+        //$selectedstore = $store->where('ID',$selectedstore);
+        //dd($selectedstore);
+
+        return view('index', compact('item', 'store', 'query', 'selectedstore'));
     } 
 
      public function search(Request $request) {
 
        $store = $request->get('store_selected');
+       $selectedstore = $store;
+
+       //dd($selectedstore);
+
        $query = $request->get('search');
 
        $item = $this->itemlist($store, $query);
        $store = $this->storelist();
 
-       return view('index', compact('item', 'store', 'query'));
+       //$selectedstore = $store->where('ID',$selectedstore);
+
+       //dd($selectedstore);
+
+       return view('index', compact('item', 'store', 'query','selectedstore'));
      }
 
 

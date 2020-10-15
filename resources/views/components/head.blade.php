@@ -4,4 +4,4 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="_token" content="{{csrf_token()}}"/>
 
-    <title>Buscador de Productos</title>
+    <title>Farmacity Buscador</title>
