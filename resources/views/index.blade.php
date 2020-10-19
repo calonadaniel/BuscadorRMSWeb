@@ -68,13 +68,13 @@
           @if($item->inventory < 1) 
           <td class="text-danger text-right">{{floatval($item->inventory)}}</td>
           @else  
-            <td class="text-danger text-right">{{floatval($item->inventory)}}</td>
+            <td class="text-right">{{floatval($item->inventory)}}</td>
           @endif
 
           @if($item->hqQuantity < 1) 
             <td class="text-danger text-right">{{floatval($item->hqQuantity)}}</td>
           @else  
-            <td class="text-danger text-right">{{floatval($item->hqQuantity)}}</td>
+            <td class="text-right">{{floatval($item->hqQuantity)}}</td>
           @endif
           <td> <a class="btn btn-success btn-sm text-white" 
                   href="item-{{$item->itemlookupcode}}" 

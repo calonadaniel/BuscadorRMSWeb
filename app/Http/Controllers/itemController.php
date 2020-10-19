@@ -120,6 +120,7 @@ class itemController extends Controller
     }
 
     public function storelist() {
+
       $storelist = store::select('*')
       ->where('Name', 'not like', '%ZZ%' )
       ->where('Name', 'not like', '%ProNAF%' )
@@ -170,4 +171,14 @@ class itemController extends Controller
 
       return view('itemdetail', compact('item'));
      }
+
+
+     public function about() {
+
+      return view('about');
+     }
 }
+
+
+
+

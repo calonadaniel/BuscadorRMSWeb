@@ -23,3 +23,5 @@ Route::get('/',[itemController::class, 'index'])->name('index');
 Route::post('/search',[itemController::class, 'search'])->name('search');
 
 Route::get('/item-{itemlookupcode}',[itemController::class, 'itemdetail'])->name('itemdetail');
+
+Route::get('/about',[itemController::class, 'about'])->name('about');

@@ -33,7 +33,6 @@ class itemdynamicController extends Controller
           ->get();
 
           dd($itemlist);
-        
     }
 
 }
