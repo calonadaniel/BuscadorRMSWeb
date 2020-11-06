@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-sm-6 d-flex justify-content-center border-success mb-3">
                 <div class="card mt-2 border-success" style="width:18rem">
-                    <img class="card-img-top mt-1" src=".\img\Logo.png"  style="width: auto;height: auto;" alt="Card image cap">
+                    <img class="card-img-top mt-1" src=".\img\about.png"   style="max-width:auto; height:70%" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title text-success border-success">Sobre la aplicación:</h5>
                         <p class="card-text text-success">Aplicación web para consultar y encontrar productos del inventario general del Microsoft Retail Management System(RMS).</p>
