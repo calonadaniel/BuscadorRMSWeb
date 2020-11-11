@@ -86,7 +86,7 @@
 
     <table class="table table-hover table-sm  table-responsive table-bordered pt-1 text-center">
       
-      <thead class="bg-success text-white">
+      <thead class="">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Sucursal</th>

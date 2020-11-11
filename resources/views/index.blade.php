@@ -24,13 +24,13 @@
           </div>
           <div class="form-group col-lg-9 col-md-9 col-sm-12">
             <input type="text"  class="h-100 w-50" placeholder="Introduzca Busqueda..." name="search" id="search" required minlength="2" value="{{$query}}" >
-            <button type="submit" class="btn btn-success" >Buscar</button>
+            <button type="submit" class="btn " >Buscar</button>
           </div>
         </div>  
     </form>
 
     <table class="table table-hover table-sm table-responsive table-bordered">
-      <thead class="bg-success text-white">
+      <thead class="">
         <tr >
           <th scope="col" >#</th>
           <th scope="col">ItemLookUpCode</th>
